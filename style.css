@@ -1,0 +1,253 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--deep-dark: #222831;
+	--light-dark: #393e46;
+	--deep-dark2: #101216;
+	--light: #eeeeee;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	color: var(--light);
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	letter-spacing: 4px;
+	text-shadow: 0px 0px 5px rgba(82, 82, 82, 0.6);
+}
+
+.todo-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: #fc5296;
+	background-image: linear-gradient(
+		315deg,
+		#ea2027 0%,
+		#fc5296 50%,
+		#f67062 74%
+	);
+}
+
+.todo {
+	position: absolute;
+	top: 90px;
+	width: 90%;
+	padding: 50px;
+	background-color: var(--deep-dark);
+	border-radius: 7px;
+	box-shadow: 1px 1px 7px var(--deep-dark);
+}
+
+.fas {
+	pointer-events: none;
+}
+
+.add {
+	padding: 20px 10px;
+	background: var(--light-dark);
+	border-radius: 3px;
+	box-shadow: 0 0 5px var(--deep-dark2);
+}
+
+.todo-input {
+	width: 80%;
+	padding: 20px 10px;
+	margin-right: 20px;
+	border: none;
+	border-radius: 3px;
+	color: var(--light);
+	background: none;
+	z-index: 5;
+	outline: var(--deep-dark);
+}
+
+.error-info {
+	margin-top: 20px;
+	color: var(--dark-blue);
+}
+
+.btn-add {
+	padding: 10px 22px;
+	border: none;
+	border-radius: 5px;
+	color: var(--light);
+	background-color: var(--deep-dark);
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: color 0.3s, background-color 0.3s;
+}
+
+.btn-add:hover {
+	color: #fff;
+	background-color: var(--light-dark);
+}
+
+.todolist {
+	margin-top: 120px;
+	padding: 20px 10px;
+	background-color: var(--light-dark);
+	color: var(--light);
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px var(--deep-dark2);
+	text-align: center;
+}
+
+.todolist h3 {
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+.todolist li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	padding-left: 20px;
+	text-align: left;
+
+	list-style: none;
+	background: none;
+	border-top: 0.01rem solid rgba(198, 198, 198, 0.2);
+}
+
+.todolist li:hover {
+	background-color: #232931;
+}
+
+.tools {
+	display: inline-block;
+}
+
+.tools button {
+	padding: 15px 10px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.tools button:hover {
+	background-color: #ddd;
+}
+
+.complete {
+	color: var(--light);
+}
+
+.edit {
+	font-weight: bold;
+	color: var(--cyan);
+}
+
+.delete {
+	color: var(--purple);
+}
+
+.completed {
+	font-size: 12px;
+	color: var(--light);
+	text-decoration: line-through;
+	font-style: italic;
+}
+
+.popup {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	bottom: 40%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	max-width: 900px;
+	color: var(--light);
+	background-color: var(--light-dark);
+	border-radius: 5px;
+}
+
+.popup h3 {
+	padding: 20px;
+}
+
+.popup-info {
+	color: var(--light);
+	margin-bottom: 20px;
+}
+
+.popup-body {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 90%;
+	padding: 10px;
+}
+
+.popup-input {
+	width: 100%;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	color: var(--light-dark);
+	background-color: var(--light);
+}
+
+.popup-btn {
+	width: 30%;
+	display: inline-block;
+	padding: 10px 22px;
+	margin: 20px;
+	border: none;
+	border-radius: 5px;
+	color: var(--deep-dark);
+	background-color: var(--light);
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: color 0.3s, background-color 0.3s;
+}
+
+.popup-btn:hover {
+	color: #fff;
+	background-color: var(--light-blue);
+}
+
+@media (max-width: 768px) {
+	h1 {
+		text-align: center;
+		margin-bottom: 45%;
+	}
+
+	.hero-img {
+		height: 200px;
+	}
+	.add {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.todo-input {
+		text-align: center;
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 1200px) {
+	.todo {
+		max-width: 900px;
+	}
+}
