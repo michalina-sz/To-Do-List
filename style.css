@@ -30,7 +30,7 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	background-color: #fc5296;
 	background-image: linear-gradient(
 		315deg,
@@ -48,6 +48,7 @@ h1 {
 	background-color: var(--deep-dark);
 	border-radius: 7px;
 	box-shadow: 1px 1px 7px var(--deep-dark);
+	overflow: hidden;
 }
 
 .fas {
@@ -61,10 +62,12 @@ h1 {
 	box-shadow: 0 0 5px var(--deep-dark2);
 }
 
-.todo-input {
+.todo-input,
+.popup-input {
 	width: 80%;
 	padding: 20px 10px;
 	margin-right: 20px;
+	font-size: 16px;
 	border: none;
 	border-radius: 3px;
 	color: var(--light);
@@ -80,18 +83,21 @@ h1 {
 
 .btn-add {
 	padding: 10px 22px;
+	font-size: 16px;
 	border: none;
 	border-radius: 5px;
 	color: var(--light);
 	background-color: var(--deep-dark);
+	box-shadow: 1px 1px 7px var(--deep-dark);
 	text-transform: uppercase;
 	cursor: pointer;
-	transition: color 0.3s, background-color 0.3s;
+	transition: color 0.3s, background-color 0.3s, transform 0.3s;
 }
 
 .btn-add:hover {
 	color: #fff;
-	background-color: var(--light-dark);
+	background-color: #101216b4;
+	transform: scale(1.07);
 }
 
 .todolist {
@@ -102,6 +108,7 @@ h1 {
 	border-radius: 5px;
 	box-shadow: 1px 1px 5px var(--deep-dark2);
 	text-align: center;
+	overflow: scroll;
 }
 
 .todolist h3 {
@@ -142,17 +149,22 @@ h1 {
 	background-color: #ddd;
 }
 
+.complete,
+.edit,
+.delete {
+	font-size: 16px;
+}
 .complete {
-	color: var(--light);
+	color: #f67062;
 }
 
 .edit {
 	font-weight: bold;
-	color: var(--cyan);
+	color: #fc5296;
 }
 
 .delete {
-	color: var(--purple);
+	color: #ea2027;
 }
 
 .completed {
